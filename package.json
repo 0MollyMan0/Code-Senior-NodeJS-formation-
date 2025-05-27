@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/0MollyMan0/Code-Senior-NodeJS-formation-/issues"
   },
-  "homepage": "https://github.com/0MollyMan0/Code-Senior-NodeJS-formation-#readme"
+  "homepage": "https://github.com/0MollyMan0/Code-Senior-NodeJS-formation-#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
