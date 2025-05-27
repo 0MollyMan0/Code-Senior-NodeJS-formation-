@@ -1,0 +1,19 @@
+{
+  "name": "node-pokemon-api",
+  "version": "1.0.0",
+  "description": "An API Rest to handle some pokemons.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0MollyMan0/Code-Senior-NodeJS-formation-.git"
+  },
+  "author": "MollyMan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0MollyMan0/Code-Senior-NodeJS-formation-/issues"
+  },
+  "homepage": "https://github.com/0MollyMan0/Code-Senior-NodeJS-formation-#readme"
+}
