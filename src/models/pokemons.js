@@ -1,4 +1,4 @@
-module.exports = (sequelize /* = Connexion à la base de donnée*/, DataTypes) => {
+module.exports = (sequelize /* = Connexion à la base de donnée*/, DataTypes /* = type de données*/) => {
     /*Fonction qui déclare un nouveau model*/
     return sequelize.define('Pokemon', {
       id: {

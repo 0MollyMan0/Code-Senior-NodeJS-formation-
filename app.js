@@ -34,13 +34,15 @@ sequelize.sync({force: true}) // Synchronise tout les modèles de l'API REST ave
  .then(_ => {
     console.log('La base de données "Pokedex" a bien été synchronisée.') 
 
-    Pokemon.create({
-     name: "Bulbizarre",
-     hp: 25,
-     cp: 5,
-     picture: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png",
-     types: ["Plante", "Poison"].join()
-    }).then(bulbizarre => console.log(bulbizarre.toJSON()));
+    pokemons.map(pokemon => {
+        Pokemon.create({
+            name: pokemon.name,
+            hp: pokemon.hp,
+            cp: pokemon.cp,
+            picture: pokemon.picture,
+            types: pokemon.types.join()
+           }).then(bulbizarre => console.log(bulbizarre.toJSON()));
+    }) 
  })
 
 app
