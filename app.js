@@ -10,9 +10,9 @@ const app = express()
 const port = 3000
 
 const sequelize = new Sequelize(
-    'pokedex',
-    'root',
-    '',
+    'pokedex', // Nom de la base
+    'root', // Nom de l'admin
+    '', // MDP
     {
         host: 'localhost',
         dialect: 'mariadb',
@@ -22,7 +22,9 @@ const sequelize = new Sequelize(
         logging: false
     })
     
-
+sequelize.authenticate()
+ .then(_ => console.log('La connexion à la base de données a bien été établie.'))
+ .catch(error => console.error(`Impossible de se connecter à la base de données ${error}`))
 
 app
  .use(morgan('dev'))
