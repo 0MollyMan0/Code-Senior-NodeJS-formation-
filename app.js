@@ -3,8 +3,10 @@ const morgan = require("morgan")
 const favicon = require("serve-favicon")
 const helper = require ('./helper')
 const bodyParser = require('body-parser')
-const { Sequelize } = require('sequelize')
+const { Sequelize, DataTypes } = require('sequelize')
 let pokemons = require('./mock-pokemon')
+const PokemonModel = require('./src/models/pokemons')
+
 
 const app = express()
 const port = 3000
@@ -25,6 +27,11 @@ const sequelize = new Sequelize(
 sequelize.authenticate()
  .then(_ => console.log('La connexion à la base de données a bien été établie.'))
  .catch(error => console.error(`Impossible de se connecter à la base de données ${error}`))
+
+const Pokemon = PokemonModel(sequelize, DataTypes) // Instanciation de la table Pokemons en utilisant le modèle Pokemon
+
+sequelize.sync({force: true}) // Synchronise tout les modèles de l'API REST avec la BDD
+ .then(_ => console.log('La base de données "Pokedex" a bien été synchronisée.') )
 
 app
  .use(morgan('dev'))
