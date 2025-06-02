@@ -3,10 +3,25 @@ const morgan = require("morgan")
 const favicon = require("serve-favicon")
 const helper = require ('./helper')
 const bodyParser = require('body-parser')
+const { Sequelize } = require('sequelize')
 let pokemons = require('./mock-pokemon')
 
 const app = express()
 const port = 3000
+
+const sequelize = new Sequelize(
+    'pokedex',
+    'root',
+    '',
+    {
+        host: 'localhost',
+        dialect: 'mariadb',
+        dialectOptions: {
+            timezone: 'Etc/GMT-2'
+        },
+        logging: false
+    })
+    
 
 
 app

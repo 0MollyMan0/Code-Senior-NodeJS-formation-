@@ -19,6 +19,8 @@
   "dependencies": {
     "body-parser": "^2.2.0",
     "express": "^5.1.0",
+    "mariadb": "^3.4.2",
+    "sequelize": "^6.37.7",
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
